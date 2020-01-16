@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Configuración de conexión a la base de datos siendo teléfonos el nombre 
+			de la base de datos que debe estar creada previamente -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/estanciashibernaterosmen</property>
+		<property name="connection.username">root</property>
+		 <property name="connection.password"></property> 
+			<!-- Pool de conexiones JDBC (se usa la que viene por defecto) -->
+		<property name="connection.pool_size">1</property>
+		<!-- Dialecto SQL -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!-- Muestra en la consola todas las consultas SQL ejecutadas -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property> 
+		<!--<property name="hbm2ddl.auto">create-drop</property> -->
+		<!--<mapping class="Persona" />-->
+		<!--<mapping class="Telefono" />-->
+		 <mapping class="aed.hibernate.clases.Residencias" />
+		 <mapping class="aed.hibernate.clases.Estancias" />
+		 <mapping class="aed.hibernate.clases.Observaciones" />
+		 <mapping class="aed.hibernate.clases.Universidades" />
+		 <mapping class="aed.hibernate.clases.Estudiantes" />
+		<!--la siguiente linea solo en el caso de usar mapeo con ficheros xml -->
+		<!-- <mapping resource="Persona.hbm.xml"/> -->
+	</session-factory>
+</hibernate-configuration>
